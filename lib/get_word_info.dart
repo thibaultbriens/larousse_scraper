@@ -7,7 +7,7 @@ import 'package:html/parser.dart' as html;
 import 'word.dart';
 
 void main() async {
-  int start = 35001;
+  int start = 39901;
   int end = 83296;
   int added = 0;
   int error = 0;
@@ -15,7 +15,8 @@ void main() async {
   print("Starting storing from $start to $end");
 
   // getting current json file
-  String fileString = await File("dictionary.json").readAsString();
+  String fileName = "dictionary.json";
+  String fileString = await File("$fileName").readAsString();
   var jsonObject = jsonDecode(fileString);
   
   // jsonObject["test udapte"] = "test update value";
@@ -34,12 +35,12 @@ void main() async {
 	
 	// update file every 300 iteration
 	if(i % 300 == 0){
-		File("dictionary.json").writeAsString(jsonEncode(jsonObject));
+		File("$fileName").writeAsString(jsonEncode(jsonObject));
 		print("\n============ UPDATED FILE ============\n${stopwatch.elapsed} elapsed\n");
 	}
   }
 
-  File("dictionary.json").writeAsString(jsonEncode(jsonObject));
+  File("$fileName").writeAsString(jsonEncode(jsonObject));
 
   stopwatch.stop();
   print("Finished program in ${stopwatch.elapsed} resulting with $added words scraped and $error errors");
