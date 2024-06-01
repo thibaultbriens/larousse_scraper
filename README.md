@@ -1,2 +1,2 @@
-# larousse_scraper
-Scraper for french dictionary Le Larousse (larousse.com)
+A sample command-line application with an entrypoint in `bin/`, library code
+in `lib/`, and example unit test in `test/`.
