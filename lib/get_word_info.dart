@@ -7,7 +7,7 @@ import 'package:html/parser.dart' as html;
 import 'word.dart';
 
 void main() async {
-  int start = 39901;
+  int start = 46801;
   int end = 83296;
   int added = 0;
   int error = 0;
